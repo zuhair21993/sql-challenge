@@ -1,0 +1,48 @@
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+
+Departments
+-
+Department_Number VARCHAR PK
+Department_Name VARCHAR
+
+Department_Employees
+-
+Employee_Number INTEGER FK >- Employees.Employee_Number 
+Department_Number VARCHAR FK >- Departments.Department_Number
+Start_Date TIMESTAMP
+End_Date TIMESTAMP
+
+Department_Managers
+-
+Department_Number VARCHAR FK >- Departments.Department_Number
+Employee_Number INTEGER FK >- Employees.Employee_Number
+Start_Date TIMESTAMP
+End_Date TIMESTAMP
+
+# Table documentation comment 1 (try the PDF/RTF export)
+Employees # Table documentation comment 2
+-
+Employee_Number INTEGER PK
+# Field documentation comment 1
+# Field documentation comment 2 
+Birth_Date TIMESTAMP # Field documentation comment 3
+First_Name VARCHAR
+Last_Name VARCHAR
+Gender VARCHAR
+Hire_Date TIMESTAMP
+
+Salaries
+-
+Employee_Number INTEGER FK >- Employees.Employee_Number
+Salary BIGINT
+Start_Date TIMESTAMP
+End_Date TIMESTAMP
+
+Titles
+-
+Employee_Number INTEGER FK >- Employees.Employee_Number
+Title VARCHAR
+Start_Date TIMESTAMP
+End_Date TIMESTAMP
