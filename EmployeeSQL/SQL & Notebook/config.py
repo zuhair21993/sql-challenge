@@ -1,3 +1,3 @@
 # Enter your login key
-user = " "
-password = " "
+user = ""
+password = ""
